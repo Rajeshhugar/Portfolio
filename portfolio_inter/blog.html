@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Rajesh Hugar</title>
+    <meta name="description" content="Insights on Data Science, Machine Learning, and AI from Rajesh Hugar.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-section {
+            padding-top: 120px;
+            /* Offset for fixed navbar */
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .pagination button {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: var(--font-mono);
+            transition: all 0.3s;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Particle Background Container -->
+    <div id="particles-js"></div>
+
+    <nav class="navbar">
+        <div class="logo">RH<span class="accent">.</span>AI</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="#" class="active" style="color: var(--accent-color);">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <section id="blog" class="section blog-section">
+        <h2 class="section-title">Latest Articles</h2>
+        <p class="section-subtitle"
+            style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; margin-top: -2rem;">
+            Insights on Data Science, Machine Learning, and AI from my journey.
+        </p>
+
+        <div class="projects-grid"> <!-- Reusing projects-grid for consistency -->
+
+            <!-- Article 1 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/p/how-to-scrape-instagram-profiles', '_blank')">
+                <div class="project-image">
+                    <img src="assets/ds_dashboard_dark_1764992340616.png" alt="Scraping Guide" class="project-img-real"
+                        style="object-fit: cover;">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>Scrape Instagram Profiles 2025</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Nov 20, 2025</small>
+                    </p>
+                    <p>A comprehensive technical guide on scraping Instagram profiles effectively.</p>
+                    <div class="project-tech">
+                        <span>Web Scraping</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/', '_blank')">
+                <div class="project-image">
+                    <img src="assets/predictive_model_curve_1764992402286.png" alt="Nutrition Guide"
+                        class="project-img-real">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>Nutrition Guide for Runners</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Oct 5, 2025</small></p>
+                    <p>Optimizing performance with proper nutrition and supplementation strategies.</p>
+                    <div class="project-tech">
+                        <span>Health</span>
+                        <span>Data Driven</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/', '_blank')">
+                <div class="project-image">
+                    <img src="assets/automation_bot_1764992445626.png" alt="Airflow Docker" class="project-img-real">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>Apache Airflow with Docker</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Aug 25, 2025</small>
+                    </p>
+                    <p>Step-by-step guide to containerizing your Airflow environment.</p>
+                    <div class="project-tech">
+                        <span>Docker</span>
+                        <span>Airflow</span>
+                        <span>DE</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/', '_blank')">
+                <div class="project-image">
+                    <img src="assets/sentiment_analysis_viz_1764992424598.png" alt="Hypothesis Testing"
+                        class="project-img-real">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>Guide to Hypothesis Testing</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Jul 16, 2025</small>
+                    </p>
+                    <p>Solving data mysteries like Sherlock Holmes using statistical methods.</p>
+                    <div class="project-tech">
+                        <span>Statistics</span>
+                        <span>Data Science</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/', '_blank')">
+                <div class="project-image">
+                    <img src="assets/automation_bot_1764992445626.png" alt="Mastering Airflow" class="project-img-real">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>Mastering Apache Airflow</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Jul 10, 2025</small>
+                    </p>
+                    <p>Everything you need to know to build robust data pipelines.</p>
+                    <div class="project-tech">
+                        <span>Airflow</span>
+                        <span>Pipelines</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/', '_blank')">
+                <div class="project-image">
+                    <img src="assets/ds_dashboard_dark_1764992340616.png" alt="SQL Guide" class="project-img-real">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>Complete SQL Interview Guide</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Jul 7, 2025</small></p>
+                    <p>Prepare for your next data science interview with this comprehensive SQL guide.</p>
+                    <div class="project-tech">
+                        <span>SQL</span>
+                        <span>Interview</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 7 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/', '_blank')">
+                <div class="project-image">
+                    <img src="assets/predictive_model_curve_1764992402286.png" alt="Two-Part Models"
+                        class="project-img-real">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>Two-Part Prediction Models</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Jul 6, 2025</small></p>
+                    <p>Advanced statistical modeling techniques for handling zero-inflated data.</p>
+                    <div class="project-tech">
+                        <span>Modeling</span>
+                        <span>Statistics</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 8 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/', '_blank')">
+                <div class="project-image">
+                    <img src="assets/sentiment_analysis_viz_1764992424598.png" alt="Lifestyle Blueprint"
+                        class="project-img-real">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>Indian Lifestyle Blueprint 2025</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Apr 30, 2025</small>
+                    </p>
+                    <p>A deep dive into socioeconomic patterns and lifestyle trends in India.</p>
+                    <div class="project-tech">
+                        <span>Analytics</span>
+                        <span>Trends</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 9 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/', '_blank')">
+                <div class="project-image">
+                    <img src="assets/ds_dashboard_dark_1764992340616.png" alt="Linux Commands" class="project-img-real">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>Guide to Linux Commands</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Mar 30, 2025</small>
+                    </p>
+                    <p>Essential Linux commands for data scientists and developers.</p>
+                    <div class="project-tech">
+                        <span>Linux</span>
+                        <span>DevOps</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 10 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/', '_blank')">
+                <div class="project-image">
+                    <img src="assets/automation_bot_1764992445626.png" alt="Git Strategy" class="project-img-real">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>Effective Git Branching Strategy</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Mar 6, 2025</small></p>
+                    <p>Managing UAT, Production, and Development environments with a robust Git strategy.</p>
+                    <div class="project-tech">
+                        <span>Git</span>
+                        <span>DevOps</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 11 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/', '_blank')">
+                <div class="project-image">
+                    <img src="assets/ds_dashboard_dark_1764992340616.png" alt="Spark Architecture"
+                        class="project-img-real">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>Apache Spark Architecture</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Feb 17, 2025</small>
+                    </p>
+                    <p>Understanding the core architecture of Apache Spark.</p>
+                    <div class="project-tech">
+                        <span>Spark</span>
+                        <span>Big Data</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 12 -->
+            <article class="project-card" data-tilt data-tilt-scale="1.05"
+                onclick="window.open('https://rajeshhugar.substack.com/', '_blank')">
+                <div class="project-image">
+                    <img src="assets/ds_dashboard_dark_1764992340616.png" alt="DB vs DW vs DL" class="project-img-real">
+                    <div class="project-overlay-text">Read Article</div>
+                </div>
+                <div class="project-info">
+                    <h3>DB vs Data Warehouse vs Data Lake</h3>
+                    <p style="margin-bottom: 0.5rem;"><small style="color: var(--accent-color);">Feb 16, 2025</small>
+                    </p>
+                    <p>What’s the difference and why it matters for your data strategy.</p>
+                    <div class="project-tech">
+                        <span>Architecture</span>
+                        <span>Data Engineering</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Simple Pagination (Static) -->
+        <div class="pagination">
+            <button disabled><i class="fas fa-chevron-left"></i> Previous</button>
+            <button onclick="window.location.href='https://rajeshhugar.substack.com/'">More on Substack <i
+                    class="fas fa-chevron-right"></i></button>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rajesh Hugar. Data Scientist & ML Engineer.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

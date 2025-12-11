@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Detail: RAG System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#2563eb", // blue-600
+            "background-light": "#f8fafc", // slate-50
+            "background-dark": "#0f172a", // slate-900
+            "surface-light": "#ffffff",
+            "surface-dark": "#1e293b", // slate-800
+            "text-primary-light": "#020617", // slate-950
+            "text-primary-dark": "#f8fafc", // slate-50
+            "text-secondary-light": "#475569", // slate-600
+            "text-secondary-dark": "#94a3b8", // slate-400
+            "border-light": "#e2e8f0", // slate-200
+            "border-dark": "#334155", // slate-700
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem", // 8px
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-secondary-light dark:text-text-secondary-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<header class="flex justify-between items-center py-6 border-b border-border-light dark:border-border-dark">
+<div class="text-xl font-bold text-text-primary-light dark:text-text-primary-dark">
+<span>Rajesh Hugar</span>
+<span class="font-normal text-text-secondary-light dark:text-text-secondary-dark">| ML Engineer</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-base font-medium text-primary border-b-2 border-primary pb-1" href="#">Projects</a>
+<a class="text-base font-medium hover:text-primary transition-colors" href="#">About</a>
+<a class="text-base font-medium hover:text-primary transition-colors" href="#">Resume</a>
+<a class="text-base font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div>
+<a class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-primary rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 transition-colors" href="#">
+          View on GitHub
+        </a>
+</div>
+</header>
+<main class="py-16 lg:py-24">
+<section class="text-center mb-16 lg:mb-24">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary-light dark:text-text-primary-dark leading-tight">
+          RAG for News Classification<br/>and Alerts System (GenAI Project)
+        </h1>
+<p class="mt-6 max-w-3xl mx-auto text-lg lg:text-xl">
+          Automating real-time news monitoring, classification, and targeted alerts using Retrieval-Augmented Generation
+        </p>
+</section>
+<section class="mb-16 lg:mb-24">
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm border border-border-light dark:border-border-dark">
+<img alt="Architecture diagram of the RAG system, showing data flow from news feeds to alerts." class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhejU8VqRc83YByRfM23eMFxCf91PgR4DBrBZ1QKFsE5dcc7IlvpN7hV5gSACviCVbdQbR4RV2RMR_rgOe1XjvYdHh6jQCJ-7bgdU4fj7BPYYdlLPyel8r8vq0tTWocv3ZPVsvDP6FI1L3zLCNM91yBNZ5RRiY9iJXKV1d-aVqcgQEZX_JZNfbAjmqVem3eoI8KUd1_I7bcfzQv69vswQpSCPVpdhhgjQqAwnIDWKNmAkY7SjiaNi4SCT6NSA9MfmcxJHMxWZAyUg"/>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+<div class="lg:col-span-2 space-y-12">
+<div>
+<h2 class="text-2xl font-bold text-text-primary-light dark:text-text-primary-dark mb-4">Project Overview</h2>
+<p class="text-base leading-relaxed">This project is a scalable RAG system designed to ingest, process, and classify high-volume news streams in real-time. By leveraging generative AI, it provides automated, context-aware summaries and alerts, significantly reducing manual monitoring efforts.</p>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-text-primary-light dark:text-text-primary-dark mb-4">Problem Statement</h2>
+<p class="text-base leading-relaxed mb-4">Manual tracking of relevant news across numerous sources is time-consuming and error-prone. The challenge was to build an intelligent system that could accurately filter noise and deliver critical information to stakeholders instantly.</p>
+<p class="text-base leading-relaxed">The entireceemeoncut now to kept ure update in a AM concents over to text cover critery in-out tampions.</p>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-text-primary-light dark:text-text-primary-dark mb-4">Solution Implemented</h2>
+<p class="text-base leading-relaxed mb-6">The solution uses LangChain for orchestration. News articles are chunked, embedded using a Transformer model, and stored in Pinecone. A retrieval chain fetches relevant context for each query, and an LLM (GPT-4) generates a concise summary and classification. The system is exposed via a FastAPI endpoint.</p>
+<div class="bg-[#0d1117] rounded-lg overflow-hidden">
+<div class="bg-[#161b22] px-4 py-2 text-sm text-gray-400 border-b border-gray-700">
+                    LangChain Retrieval Chain Example (Python)
+                </div>
+<pre class="p-4 text-sm text-gray-300 overflow-x-auto"><code class="language-python"><span class="text-purple-400">from</span> langchain.chains <span class="text-purple-400">import</span> RetrievalQA...
+chain = RetrievalQA.from_chain_type(llm=llm,
+    retriever=vectorstore.as_retriever(),
+    ...)</code></pre>
+</div>
+</div>
+<div>
+<h2 class="text-2xl font-bold text-text-primary-light dark:text-text-primary-dark mb-6">Key Achievements</h2>
+<ul class="space-y-4 text-base">
+<li class="flex items-start">
+<span class="material-icons text-green-500 mr-3 mt-1">check_circle</span>
+<span>Improved news reporting efficiency by 30%.</span>
+</li>
+<li class="flex items-start">
+<span class="material-icons text-green-500 mr-3 mt-1">check_circle</span>
+<span>Achieved 95% classification accuracy on test datasets.</span>
+</li>
+<li class="flex items-start">
+<span class="material-icons text-green-500 mr-3 mt-1">check_circle</span>
+<span>Reduced alert latency from hours to under 5 minutes for test datasets.</span>
+</li>
+</ul>
+</div>
+</div>
+<aside class="space-y-12">
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm border border-border-light dark:border-border-dark">
+<h3 class="text-xl font-bold text-text-primary-light dark:text-text-primary-dark mb-6">Technologies Used</h3>
+<ul class="space-y-4">
+<li class="flex items-center"><img alt="LangChain logo" class="h-6 w-6 mr-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtLiW7cOUg8lDWqzfQvPb2IOTMBgZwq9IxLzkCDEZl-z2kpzxp4u7APG2c2GrTNfdxe3P0CVCTz5eT2LfeKKYhCHN7_8TK379vz2Ta8HQ5uDg80E2X-INHPo70Ooq2YjRgOJa5-y8SFFKSPdxSXTBugE3bvzmgpmjc6BpvuHFG7udgBPXj1T9ud0JU_GrLpYJ0Lds8cDEEZ5mIkkqNS6mldg2UW0ZzdcC7cKL_YpGxzAtaIlL2-afuruVk8G8IBWtlmiL5Q-idnLA"/> LangChain</li>
+<li class="flex items-center"><img alt="OpenAI logo" class="h-6 w-6 mr-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuleK4xgvbJye58veGbOCa06snKOWn4ObZCwMIrOPbL64hcrtFeGmA9uCbWDZeRJ9--SwEVJSY4J3yGLWhepOU6kiyv94pLlWs_TaW3MJDdXEJR2DTGcnoZI2VjtJMqUxk3TDe12Ol3lhFrW2lQTMC5JFc7yk7sGCLYQXiCRLLATIJhvH9H7aMOqO1L26eossSL8mh0vC5ttqSIltW_ddF3yRTP9k-fD5qx2LZ8j1VEhuSsEKbE657eAKDnG1r1HhdnuASgTAQGrs"/> OpenAI (GPT-4)</li>
+<li class="flex items-center"><img alt="Hugging Face logo" class="h-6 w-6 mr-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI514Ckwosxc05OxMnfdC6RScar7CM3aeliDMUGJOwSFK4DVJ34jQVvVI8BPRfF6IwEQEKBXGf1zLOrHJa3wIsHoab92AwKuVIpPbKcJLd7z77NyJmSHZbuqzFW-hSouR07pjOwZnb8UFaRSmeI-T2w0cimXKKVRXsd39PGdxoKQmR7PRheDjKFGcmWkDszCDLkKlAN9AtmFoMZwXCC4c96LU6FFsHvg_4hmyLteWGNTVX1Jxl3EKyAEjZgIAX_w7d6pEuE8935cs"/> Hugging Face (Transformers)</li>
+<li class="flex items-center"><img alt="Pinecone logo" class="h-6 w-6 mr-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPYpPAvqK9S-xjLN6IrXBUeEiq58MvoBdoT9C2OoTtsPmnZnIBkiMECfeBwVUEizrmfM3-5_6CO4FWFAwIg56h70mzkKDMMANeljCA0jlPkCJZngyXY0_uU34bvgMDFa0UOLUoS7XJV_gm9nn5mRXUQkNpbPMV8Qg5NsS8QGmPBALr5YjoD-9Hr-J39z4yyULOTTbeYCwXi4N-3IS8BNDcxw1DMN2OFVkScdW9AfesR4gqKreMffbVntrqClLxVuyht5Dm8ufGj64"/> Pinecone (Vector DB)</li>
+<li class="flex items-center"><img alt="Python logo" class="h-6 w-6 mr-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4JMWBAxQ0QhRxYlc84VsfhKSmueMsJuUTq7zD1VhwJ8Pb2jbqzaI2kRQkxpYZ2lFLTEZmT2D-DYgAx9D2ogho7LSfMhMd03z6X8H-Wfa2VAx0vADkBXBxSy_tUkh7r2UDTKRkMWLGq7KX8qtgr7x4PqI-sYFLHlfYJGasWGQmFP4kMk4U-lbJpvLLr8Am7x--5WEDihcXTCgJeA0jEkl9Gv1fpqJtdfq5SG3PF1c6UXBSHvrhqGMmL6IabYwSbihAV9h10u4w3CU"/> Python</li>
+<li class="flex items-center"><img alt="FastAPI logo" class="h-6 w-6 mr-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByx1FqXFO53R-fBmf8vV7CERg_0SyXKcxHct_JYBbT1l6PVmxGcxtzCGgdRUK6gBT6Y_GQH-eUIcabqu67yrmsSdmeoWKVogBLLp3gRj4mexlHEx3LGfIdOZgPBH-kCiaPw5t2iURy3nFCzbMnnpTtQrRwCfX4k7ypGGNQsU84XLdYS7pyOKmK5VH8vgrtba7CJPcXAWrxibmPy23QnBPLSgE5U9rNE_zBIl9PAuAY46rMRVZYPAUDELNTf3ZGI7MVL7yc0yA9ARs"/> FastAPI</li>
+<li class="flex items-center"><img alt="Streamlit logo" class="h-6 w-6 mr-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEZR6IzfmV9nd3wvgaDI6SLIkLcCI1di0ezpAb9kf_jd0IN-WBCy2p-igPaB-PKE6lSKXCDKehxJ4bqTCTTH6UsKy7TMpeMkVOM0QIotZ5G-YvX6IqZYDqr2VbSwxteobz5V6FmVt_3inz5PZM4nCHvYh59KjxpsaLwXzTMdBXRuYxSgtgNr8vsKp91EbLrXZLhIdRyBhAnVht2KbL31mCNseOZ6LmX8e8_MUf88x2wGujMcAq8EHk4t22gSANapMEOVskTUTdZ-g"/> Streamlit (Demo Interface)</li>
+</ul>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg shadow-sm border border-border-light dark:border-border-dark">
+<h3 class="text-xl font-bold text-text-primary-light dark:text-text-primary-dark mb-6">Project Links</h3>
+<div class="space-y-3">
+<a class="flex items-center justify-center w-full px-4 py-2.5 text-sm font-medium border border-border-light dark:border-border-dark rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" href="#">Live Demo</a>
+<a class="flex items-center justify-center w-full px-4 py-2.5 text-sm font-medium border border-border-light dark:border-border-dark rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" href="#">GitHub Repository</a>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<footer class="flex justify-between items-center py-6 border-t border-border-light dark:border-border-dark text-sm">
+<p>© 2024 Rajesh Hugar. All rights reserved.</p>
+<div class="flex items-center space-x-4">
+<a class="hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+<span class="sr-only">LinkedIn</span>
+</a>
+<a class="hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.212 3.793 4.649-.65.178-1.336.23-2.04.188.608 1.922 2.372 3.234 4.465 3.27-1.714 1.34-3.844 2.115-6.161 2.054C.474 21.655 2.44 22.5 4.624 22.5c5.962 0 9.493-4.836 9.18-9.923.773-.556 1.434-1.243 1.957-2.017z"></path></svg>
+<span class="sr-only">Twitter</span>
+</a>
+<a class="hover:text-primary transition-colors" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.838 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path></svg>
+<span class="sr-only">GitHub</span>
+</a>
+</div>
+</footer>
+</div>
+
+</body></html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rajesh Hugar - Project Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- BEGIN: Custom Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'custom-navy': '#1d2c4f',
+            'custom-teal': '#28a798',
+            'custom-dark-blue': '#2c3e50',
+            'custom-light-gray': '#f8f9fa',
+            'custom-text-primary': '#212529',
+            'custom-text-secondary': '#495057',
+          }
+        }
+      }
+    }
+  </script>
+<!-- END: Custom Tailwind Configuration -->
+<!-- BEGIN: Base Styles -->
+<style data-purpose="base-styles">
+    body {
+      background-color: #e9ecef; /* A slightly darker gray to make the content pop */
+    }
+  </style>
+<!-- END: Base Styles -->
+</head>
+<body class="font-sans text-custom-text-primary bg-custom-light-gray">
+<div class="max-w-7xl mx-auto bg-white shadow-lg my-8">
+<!-- BEGIN: MainHeader -->
+<header class="bg-white border-b border-gray-200">
+<div class="container mx-auto px-6 lg:px-12 py-5 flex justify-between items-center">
+<!-- Developer Name -->
+<div class="text-xl font-bold text-custom-dark-blue">
+          Rajesh Hugar
+        </div>
+<!-- Navigation Links -->
+<nav>
+<ul class="flex items-center space-x-8 text-sm font-medium text-custom-text-secondary">
+<li><a class="hover:text-custom-teal transition-colors" href="#">Home</a></li>
+<li><a class="text-custom-teal font-semibold border-b-2 border-custom-teal pb-1" href="#">Projects</a></li>
+<li><a class="hover:text-custom-teal transition-colors" href="#">About</a></li>
+<li><a class="hover:text-custom-teal transition-colors" href="#">Resume</a></li>
+<li><a class="hover:text-custom-teal transition-colors" href="#">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: MainContent -->
+<main>
+<!-- BEGIN: Hero Section -->
+<section class="bg-gradient-to-r from-[#2c3e50] to-[#1e2a3a] text-white">
+<div class="container mx-auto px-6 lg:px-12 py-16 flex items-center justify-between">
+<!-- Hero Text Content -->
+<div class="w-1/2" data-purpose="hero-text">
+<h1 class="text-4xl lg:text-5xl font-bold leading-tight">Automated Alerts using<br/>Brand Watch API</h1>
+<p class="mt-4 text-lg text-gray-300">Rajesh Hugar | Machine Learning Engineer</p>
+</div>
+<!-- Hero Image Content -->
+<div class="w-1/2 flex justify-end" data-purpose="hero-image">
+<img alt="Dashboard UI for Brand Watch API" class="rounded-lg shadow-2xl w-full max-w-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCCJrnMr_H4KYYZUYWJUm8_cGFT-ChtzDQfQ3ZCh7ztgssjdIeFkabBNZL1I8WpNz5L92RE_mhK__zCX-PMMQSxuKaJ37R5fZ5jENPnfTI8hZH-ccVNOHx3yQkBPvjmCX_a77W2JtmPOIRyAOzvA4kcPfGoKOtPT7FDgSvgufmfhivzF99RQoxhK6ckDF0h1R4UxTs8smNWOccmDBTtNQXVVotXSEvAFYNrzEVi8O-uW-S__K1nxRhjgBu7ZkAMm9qmYyBwV8wtWM"/>
+</div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- Container for the rest of the content -->
+<div class="container mx-auto px-6 lg:px-12 py-12">
+<!-- BEGIN: Problem and Solution Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+<!-- The Problem Column -->
+<div data-purpose="problem-column">
+<h2 class="text-xl font-bold text-custom-dark-blue mb-4">The Problem</h2>
+<p class="text-custom-text-secondary leading-relaxed">
+              Manual monitoring of brand mentions across channels was time-consuming and inefficient, leading to delayed responses and missed opportunities.
+            </p>
+</div>
+<!-- The Solution Column -->
+<div data-purpose="solution-column">
+<h2 class="text-xl font-bold text-custom-dark-blue mb-4">The Solution</h2>
+<ul class="list-disc pl-5 space-y-2 text-custom-text-secondary leading-relaxed">
+<li>Developed an automated reporting pipeline integrated with the Brand Watch API to fetch real-time data.</li>
+<li>Implemented a Python-based backend to process data, generate customized PDF reports, and trigger immediate alerts via email and Slack.</li>
+<li>Utilized machine learning models for sentiment analysis and anomaly detection.</li>
+</ul>
+</div>
+</section>
+<!-- END: Problem and Solution Section -->
+<!-- BEGIN: Key Outcomes Section -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold text-custom-dark-blue text-center mb-10">Key Outcomes</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+<!-- Outcome 1: Faster Response Time -->
+<div class="flex flex-col items-center" data-purpose="outcome-item">
+<div class="w-16 h-16 bg-custom-teal/10 rounded-full flex items-center justify-center mb-4"><svg class="lucide lucide-timer" fill="none" height="32" stroke="#28a798" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><line x1="10" x2="14" y1="2" y2="2"></line><line x1="12" x2="12" y1="14" y2="18"></line><path d="M17 14h-1"></path><path d="M7 14h1"></path><path d="M17 18h-1"></path><path d="M7 18h1"></path><path d="m12 6 2 2 4-4"></path><path d="M20 14.5a8.5 8.5 0 1 1-10.6-7.8"></path></svg></div>
+<p class="text-3xl font-bold text-custom-teal">40%</p>
+<p class="text-custom-text-secondary mt-1">Faster Response Time to critical mentions</p>
+</div>
+<!-- Outcome 2: Reduction in Manual Effort -->
+<div class="flex flex-col items-center" data-purpose="outcome-item">
+<div class="w-16 h-16 bg-custom-teal/10 rounded-full flex items-center justify-center mb-4"><svg class="lucide lucide-mouse-pointer-click" fill="none" height="32" stroke="#28a798" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="m9 9 5 12 1.8-5.2L21 14Z"></path><path d="M7.2 2.2 8 5.1"></path><path d="m5.1 8-2.9-.8"></path><path d="M14 4.1 12 6"></path><path d="m6 12-1.9 2"></path></svg></div>
+<p class="text-3xl font-bold text-custom-teal">50%</p>
+<p class="text-custom-text-secondary mt-1">Reduction in Manual Effort for reporting</p>
+</div>
+<!-- Outcome 3: Improved Brand Perception -->
+<div class="flex flex-col items-center" data-purpose="outcome-item">
+<div class="w-16 h-16 bg-custom-teal/10 rounded-full flex items-center justify-center mb-4"><svg class="lucide lucide-trending-up" fill="none" height="32" stroke="#28a798" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg></div>
+<p class="font-semibold text-custom-text-primary">Improved Brand Perception</p>
+<p class="text-custom-text-secondary">through timely engagement</p>
+</div>
+</div>
+</section>
+<!-- END: Key Outcomes Section -->
+<!-- BEGIN: System Architecture Section -->
+<section class="bg-gray-100 rounded-lg p-8 md:p-12 mb-16">
+<h2 class="text-2xl font-bold text-custom-dark-blue text-center mb-8">System Architecture &amp; Data Flow</h2>
+<div class="flex justify-center">
+<img alt="System architecture and data flow diagram" class="max-w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQNNR_l6w7lddd46ZGGTcdUaW2CC_EmH1sKIZ87PTe8tNGEwM3GxiWCTG4KMj2GmhDXBCpPlQ0dZlvNuP68QdDsOqqXEk4EXaqMv2wqE4yDQvN8Mr9Vof2mgvMYTIphK28AEANVMGPt_lwSaR8KcIWzvrdNdHIBe-519-1N2iS3203Cz96nkGCtu0wuEY6tTdkMNlQr2YfEhN237UpLea0k4WzgDj-8BC55ysXF2Cj9fMqikDMr1-cvwiLxs_Q2pGgUcooD1b6sAw"/>
+</div>
+</section>
+<!-- END: System Architecture Section -->
+<!-- BEGIN: Technologies Used Section -->
+<section>
+<h2 class="text-2xl font-bold text-custom-dark-blue text-center mb-8">Technologies Used</h2>
+<div class="flex justify-center items-center flex-wrap gap-x-12 gap-y-6"><div class="flex justify-center items-center flex-wrap gap-4 text-custom-text-secondary"><div class="border border-gray-200 rounded-md px-4 py-2 text-center"><span class="text-lg font-medium">Python</span></div><div class="border border-gray-200 rounded-md px-4 py-2 text-center"><span class="text-lg font-medium">Pandas</span></div><div class="border border-gray-200 rounded-md px-4 py-2 text-center"><span class="text-lg font-medium">Brand Watch</span></div><div class="border border-gray-200 rounded-md px-4 py-2 text-center"><span class="text-lg font-medium">Flask</span></div><div class="border border-gray-200 rounded-md px-4 py-2 text-center"><span class="text-lg font-medium">Docker</span></div><div class="border border-gray-200 rounded-md px-4 py-2 text-center"><span class="text-lg font-medium">AWS</span></div><div class="border border-gray-200 rounded-md px-4 py-2 text-center"><span class="text-lg font-medium">Slack</span></div></div></div>
+</section>
+<!-- END: Technologies Used Section -->
+</div>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-custom-navy text-white">
+<div class="container mx-auto px-6 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center">
+<!-- Copyright Info -->
+<p class="text-sm text-gray-400 mb-4 sm:mb-0">© 2024 Rajesh Hugar</p>
+<!-- Social and Legal Links -->
+<div class="flex items-center space-x-6">
+<!-- Social Icons -->
+<div class="flex items-center space-x-4">
+<a aria-label="LinkedIn Profile" href="#">
+<svg class="w-5 h-5 fill-current text-gray-400 hover:text-white transition-colors" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 0 1 2.063-2.065 2.064 2.064 0 0 1 2.063 2.065c0 1.14-.925 2.065-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>
+</a>
+<a aria-label="GitHub Profile" href="#">
+<svg class="w-5 h-5 fill-current text-gray-400 hover:text-white transition-colors" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+</a>
+<a aria-label="Twitter Profile" href="#">
+<svg class="w-5 h-5 fill-current text-gray-400 hover:text-white transition-colors" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.223.085 4.934 4.934 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.213 0-.425-.015-.637A9.954 9.954 0 0 0 24 4.59z"></path></svg>
+</a>
+</div>
+<!-- Vertical Divider -->
+<div class="hidden sm:block w-px h-5 bg-gray-600"></div>
+<!-- Legal Links -->
+<div class="flex items-center space-x-4 text-sm text-gray-400">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+</div>
+</body></html>

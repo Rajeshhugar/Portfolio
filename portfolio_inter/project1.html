@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG for News Classification | Rajesh Hugar</title>
+    <meta name="description"
+        content="Scalable RAG system for real-time news monitoring and classification using GenAI and LangChain.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind CSS v3 via CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Custom Tailwind Configuration for Theme Adaptation (Dark Mode Override) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Mapping User's Light Theme Classes -> Site's Dark Theme Colors
+                        'custom-navy': '#0f172a',      // Site Background
+                        'custom-slate': '#1e293b',     // Card Background / Darker Accents
+                        'custom-light-bg': '#0f172a',  // Site Background (Overrides white/light bg)
+                        'custom-card-bg': '#1e293b',   // Card Background
+                        'custom-text-dark': '#f8fafc', // Primary Text (White/Light)
+                        'custom-text-light': '#94a3b8', // Secondary Text (Gray)
+                        'accent': '#38bdf8',           // Site Accent (Sky Blue)
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Keep Inter for this page content
+                        heading: ['Outfit', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ensure Tailwind doesn't conflict with global base styles */
+        body {
+            /* allow tailwind bg to take effect, or force it */
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+        }
+
+        /* Navbar fix for Tailwind's preflight (if any conflicts occur) */
+        .navbar a {
+            text-decoration: none;
+        }
+
+        /* Add margin for fixed navbar */
+        #page-wrapper {
+            padding-top: 80px;
+        }
+
+        /* Custom Back Button */
+        .back-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            font-family: var(--font-mono);
+            transition: transform 0.3s;
+        }
+
+        .back-nav:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+
+<body class="bg-custom-light-bg font-sans text-custom-text-dark">
+    <!-- Cursor Effects -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Main Navigation (Site Standard) -->
+    <nav class="navbar">
+        <div class="logo">RH<span class="accent">.</span>AI</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#projects" class="active" style="color: var(--accent-color);">Projects</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <div class="flex flex-col min-h-screen" id="page-wrapper">
+
+        <!-- BEGIN: MainContent -->
+        <main class="flex-grow" data-purpose="MainPageContent">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+                <!-- Custom Breadcrumbs / Back Link -->
+                <a href="index.html#projects" class="back-nav">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+
+                <!-- BEGIN: ProjectHeader -->
+                <section class="mb-12 text-center lg:text-left" data-purpose="ProjectTitleSection">
+                    <h1
+                        class="text-4xl md:text-5xl font-extrabold text-custom-text-dark mb-4 filter drop-shadow-lg leading-tight">
+                        RAG for News Classification <span class="text-accent">& Alerts System</span>
+                    </h1>
+                    <p class="text-lg text-custom-text-light max-w-3xl">
+                        Automating real-time news monitoring, classification, and targeted alerts using
+                        Retrieval-Augmented Generation (GenAI).
+                    </p>
+                </section>
+                <!-- END: ProjectHeader -->
+
+                <section class="mb-16">
+                    <div class="bg-custom-card-bg p-2 rounded-xl border border-gray-700/50 shadow-2xl overflow-hidden">
+                        <img alt="Architecture diagram of the RAG system"
+                            class="w-full h-auto object-contain rounded-lg opacity-90 hover:opacity-100 transition-opacity duration-300"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhejU8VqRc83YByRfM23eMFxCf91PgR4DBrBZ1QKFsE5dcc7IlvpN7hV5gSACviCVbdQbR4RV2RMR_rgOe1XjvYdHh6jQCJ-7bgdU4fj7BPYYdlLPyel8r8vq0tTWocv3ZPVsvDP6FI1L3zLCNM91yBNZ5RRiY9iJXKV1d-aVqcgQEZX_JZNfbAjmqVem3eoI8KUd1_I7bcfzQv69vswQpSCPVpdhhgjQqAwnIDWKNmAkY7SjiaNi4SCT6NSA9MfmcxJHMxWZAyUg" />
+                    </div>
+                </section>
+
+                <!-- BEGIN: ProjectDetailsGrid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Left Column -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <!-- Project Overview Card -->
+                        <article
+                            class="bg-custom-card-bg p-8 rounded-xl border border-gray-700/50 shadow-2xl hover:border-accent/30 transition-colors duration-300"
+                            data-purpose="ProjectOverviewCard">
+                            <h2 class="text-2xl font-bold mb-4 text-custom-text-dark font-heading">Project Overview</h2>
+                            <p class="text-custom-text-light leading-relaxed">
+                                This project is a scalable RAG system designed to ingest, process, and classify
+                                high-volume news streams in real-time. By leveraging generative AI, it provides
+                                automated, context-aware summaries and alerts, significantly reducing manual monitoring
+                                efforts.
+                            </p>
+                        </article>
+
+                        <!-- Problem Statement Card -->
+                        <article
+                            class="bg-custom-card-bg p-8 rounded-xl border border-gray-700/50 shadow-2xl hover:border-accent/30 transition-colors duration-300"
+                            data-purpose="ProblemStatementCard">
+                            <h2 class="text-2xl font-bold mb-4 text-custom-text-dark font-heading">Problem Statement
+                            </h2>
+                            <p class="text-custom-text-light leading-relaxed mb-4">
+                                Manual tracking of relevant news across numerous sources is time-consuming and prone to
+                                human error. The challenge was to build an intelligent, always-on system capable of
+                                filtering noise and delivering critical, actionable intelligence to stakeholders
+                                instantly.
+                            </p>
+                        </article>
+
+                        <!-- Solution Card -->
+                        <article
+                            class="bg-custom-card-bg p-8 rounded-xl border border-gray-700/50 shadow-2xl hover:border-accent/30 transition-colors duration-300"
+                            data-purpose="SolutionCard">
+                            <h2 class="text-2xl font-bold mb-4 text-custom-text-dark font-heading">Solution Implemented
+                            </h2>
+                            <p class="text-custom-text-light leading-relaxed mb-6">
+                                The solution uses LangChain for orchestration. News articles are chunked, embedded using
+                                a Transformer model, and stored in Pinecone vector database. A retrieval chain fetches
+                                relevant context for each query, and GPT-4 generates concise summaries and
+                                classifications, exposed via a FastAPI endpoint.
+                            </p>
+                            <div class="bg-[#0d1117] rounded-lg overflow-hidden border border-gray-700">
+                                <div class="bg-[#161b22] px-4 py-2 text-xs text-gray-400 border-b border-gray-700">
+                                    LangChain Retrieval Chain Example (Python)
+                                </div>
+                                <pre class="p-4 text-sm text-gray-300 overflow-x-auto font-mono"><code class="language-python"><span class="text-purple-400">from</span> langchain.chains <span class="text-purple-400">import</span> RetrievalQA
+
+chain = RetrievalQA.from_chain_type(
+    llm=llm,
+    retriever=vectorstore.as_retriever(),
+    chain_type="stuff"
+)</code></pre>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="lg:col-span-1 space-y-8">
+                        <!-- Key Achievements Card -->
+                        <aside
+                            class="bg-custom-card-bg p-8 rounded-xl border border-gray-700/50 shadow-2xl hover:border-accent/30 transition-colors duration-300"
+                            data-purpose="KeyAchievementsCard">
+                            <h2 class="text-2xl font-bold mb-6 text-custom-text-dark font-heading">Key Achievements</h2>
+                            <div class="flex flex-col gap-6 text-center">
+                                <div class="bg-custom-navy/50 p-4 rounded-lg border border-accent/20">
+                                    <p class="text-4xl font-bold text-accent">30%</p>
+                                    <p class="text-sm text-custom-text-light mt-1 uppercase tracking-wide">
+                                        Efficiency Gain</p>
+                                </div>
+                                <div class="bg-custom-navy/50 p-4 rounded-lg border border-accent/20">
+                                    <p class="text-4xl font-bold text-accent">95%</p>
+                                    <p class="text-sm text-custom-text-light mt-1 uppercase tracking-wide">
+                                        Classification Accuracy</p>
+                                </div>
+                                <div class="bg-custom-navy/50 p-4 rounded-lg border border-accent/20">
+                                    <p class="text-4xl font-bold text-accent">&lt; 5m</p>
+                                    <p class="text-sm text-custom-text-light mt-1 uppercase tracking-wide">Alert Latency
+                                    </p>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <!-- Tech Stack List -->
+                        <aside
+                            class="bg-custom-card-bg p-8 rounded-xl border border-gray-700/50 shadow-2xl hover:border-accent/30 transition-colors duration-300"
+                            data-purpose="TechStackList">
+                            <h2 class="text-xl font-bold mb-4 text-custom-text-dark font-heading">Technologies Used</h2>
+                            <ul class="space-y-4">
+                                <li class="flex items-center text-custom-text-light">
+                                    <i class="fas fa-link text-accent mr-3 w-6 text-center"></i> LangChain
+                                </li>
+                                <li class="flex items-center text-custom-text-light">
+                                    <i class="fas fa-brain text-accent mr-3 w-6 text-center"></i> OpenAI (GPT-4)
+                                </li>
+                                <li class="flex items-center text-custom-text-light">
+                                    <i class="fas fa-microchip text-accent mr-3 w-6 text-center"></i> Hugging Face
+                                </li>
+                                <li class="flex items-center text-custom-text-light">
+                                    <i class="fas fa-database text-accent mr-3 w-6 text-center"></i> Pinecone Vector DB
+                                </li>
+                                <li class="flex items-center text-custom-text-light">
+                                    <i class="fab fa-python text-accent mr-3 w-6 text-center"></i> Python
+                                </li>
+                                <li class="flex items-center text-custom-text-light">
+                                    <i class="fas fa-server text-accent mr-3 w-6 text-center"></i> FastAPI
+                                </li>
+                            </ul>
+                        </aside>
+
+                        <!-- Links Card -->
+                        <aside class="bg-custom-card-bg p-6 rounded-xl border border-gray-700/50 shadow-2xl"
+                            data-purpose="LinksCard">
+                            <h2 class="text-xl font-bold mb-4 text-custom-text-dark font-heading">Project Links</h2>
+                            <div class="flex flex-col space-y-3">
+                                <a href="#"
+                                    class="w-full text-center border border-accent text-accent font-medium py-2 px-4 rounded-md hover:bg-accent hover:text-white transition-all duration-300">
+                                    <i class="fab fa-github mr-2"></i> View Repository
+                                </a>
+                                <a href="#"
+                                    class="w-full text-center bg-gray-700 text-gray-300 font-medium py-2 px-4 rounded-md hover:bg-gray-600 hover:text-white transition-all duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                                </a>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+                <!-- END: ProjectDetailsGrid -->
+
+            </div>
+        </main>
+        <!-- END: MainContent -->
+
+        <!-- BEGIN: MainFooter -->
+        <footer class="bg-custom-navy text-white mt-auto border-t border-gray-800" data-purpose="SiteFooter"
+            style="background: transparent;">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="flex flex-col sm:flex-row items-center justify-between">
+                    <!-- Copyright Information -->
+                    <div class="text-sm text-gray-400 mb-4 sm:mb-0">
+                        &copy; 2025 Rajesh Hugar. All rights reserved.
+                    </div>
+                    <!-- Social Media Links -->
+                    <div class="flex items-center space-x-6" data-purpose="SocialLinks">
+                        <a aria-label="GitHub" class="text-gray-400 hover:text-accent transition-colors"
+                            href="https://github.com/rajeshhugar" target="_blank"><i
+                                class="fab fa-github text-xl"></i></a>
+                        <a aria-label="LinkedIn" class="text-gray-400 hover:text-accent transition-colors"
+                            href="https://linkedin.com/in/Rajeshhugar" target="_blank"><i
+                                class="fab fa-linkedin text-xl"></i></a>
+                        <a aria-label="Twitter" class="text-gray-400 hover:text-accent transition-colors"
+                            href="https://twitter.com/hugarrajesh_" target="_blank"><i
+                                class="fab fa-twitter text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- END: MainFooter -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

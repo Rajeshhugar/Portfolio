@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rajesh Hugar - Product Review Analysis</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Custom Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-dark-blue': '#111827',
+            'brand-header': '#1A2332',
+            'brand-teal': '#14B8A6',
+            'brand-light-gray': '#F9FAFB',
+            'metric-green-bg': '#F0FDF4',
+            'metric-green-icon': '#DCFCE7',
+            'metric-blue-bg': '#EFF6FF',
+            'metric-blue-icon': '#DBEAFE',
+            'metric-purple-bg': '#F5F3FF',
+            'metric-purple-icon': '#EDE9FE',
+            'brand-text-light': '#D1D5DB',
+            'brand-text-dark': '#374151',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Google Fonts for Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="global-styles">
+    /* Applying the Inter font as the default sans-serif font */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F9FAFB; /* Corresponds to brand-light-gray */
+      color: #374151; /* Corresponds to brand-text-dark */
+    }
+  </style>
+</head>
+<body class="bg-brand-light-gray text-brand-text-dark">
+<div class="max-w-7xl mx-auto p-4 md:p-8">
+<!-- BEGIN: MainHeader -->
+<header class="bg-brand-header text-white rounded-xl p-4 shadow-lg">
+<nav class="flex justify-between items-center">
+<!-- Logo on the left -->
+<div class="flex items-center space-x-2" data-purpose="logo-container">
+<img alt="Rajesh Hugar logo" class="h-8 w-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVIeOmVU3hCeDDXcoA3Hw4IbksXWwnL0HaMwIGVzIn3L0oBfyv_oitjbHFtr0TLWnSPp72jomWWBf8SazhWVz8PsUoU2el0tpeL6xL8ubgonl2igNRwachTSaNwPSwD-t1KWZCyFAwiv0jSNvDwtFPz4tbxHn3lJurO9LZ7WUJa8YqcO5Ljz5ysaBCZ5CLBXhesc9uHaofrugRIrsvKR_ILDzIgNb4trieb8JoagqdAsm3jfzTCQoLDMd6meQjrAbEzjVHDRuXTCY"/>
+<span class="font-bold text-lg">Rajesh Hugar</span>
+</div>
+<!-- Navigation links in the center -->
+<ul class="hidden md:flex items-center space-x-8" data-purpose="desktop-navigation">
+<li><a class="hover:text-brand-teal transition-colors" href="#">Home</a></li>
+<li><a class="bg-brand-teal px-3 py-1.5 rounded-md text-white font-medium" href="#">Projects</a></li>
+<li><a class="hover:text-brand-teal transition-colors" href="#">About</a></li>
+<li><a class="hover:text-brand-teal transition-colors" href="#">Contact</a></li>
+</ul>
+<!-- Download button on the right -->
+<a class="bg-brand-teal hover:bg-teal-500 text-white font-semibold py-2 px-4 rounded-lg transition-colors" data-purpose="resume-download-button" href="#">
+          Download Resume
+        </a>
+</nav>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: PageContentGrid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+<!-- BEGIN: LeftColumn -->
+<main class="flex flex-col space-y-8">
+<!-- BEGIN: HeroSection -->
+<section class="bg-brand-header text-white p-8 md:p-12 rounded-xl relative overflow-hidden" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDuM9HTuXZ1g_0EfXDC_16pQfaf_3LV16RHQRc_KwSlYJUd4vC2SAD_3QbK2NMZ2M8_FdN-_ghhQwVylz9C4XtIwvHlxARJ708yYNBPZBP-_jLpxXIpNAqvukMhQCuYCfMoVKEjxTAzjP1VfdAagpjojKC0kQfj1GONzgOfCjvaw-ZsqH7uD6hqCtZhCH7hA2KiEA3TQzBFvgi5KGrXjPrY8mqa1-8doRsb3g-vIEADwJy8h6vWIA_9ChJtCb5zMUQtROOM7FIq1tc'); background-size: cover; background-position: right bottom; background-repeat: no-repeat;">
+<h1 class="text-4xl md:text-5xl font-bold">Product Review Analysis</h1>
+<p class="mt-4 text-lg text-brand-text-light max-w-2xl">Leveraging XGBoost and NLP for Customer Sentiment Insights &amp; Business Growth</p>
+<div class="mt-6 flex flex-wrap gap-4 text-sm">
+<span class="border border-gray-600 rounded-full px-4 py-1.5">Role: Machine Learning Engineer</span>
+<span class="border border-gray-600 rounded-full px-4 py-1.5">Duration: 3 Months</span>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: ProjectDetails -->
+<div class="space-y-8">
+<!-- Project Overview -->
+<section data-purpose="project-overview">
+<h2 class="text-2xl font-bold mb-3">Project Overview</h2>
+<p class="text-gray-600 leading-relaxed">
+              Collaborated with the product team to develop an automated system for analyzing thousands of customer reviews. The objective was to accurately classify sentiment and extract actionable key phrases to guide product roadmap decisions, replacing manual and time-consuming processes.
+            </p>
+</section>
+<!-- Key Impact & Metrics -->
+<section data-purpose="key-impact-metrics">
+<h2 class="text-2xl font-bold mb-4">Key Impact &amp; Metrics</h2>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<!-- Metric Card 1 -->
+<div class="p-4 rounded-lg border border-gray-200 shadow-sm bg-green-50" data-purpose="metric-card">
+<div class="bg-metric-green-icon p-2 rounded-md inline-block">
+<img alt="Accuracy Icon" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGiXr5P9Eu2SFI5Pi92LY29n08fUATAO8WQSN0T-om-Z2s9LjXI0lJpVDKZVTPVis4TB9LeQw6V7fMVwkMIwBr4FIXFcbgJ9GwPKbOWfBUU488BmXU00-znAgyjudpxi08H-KJjWMePn2JGggM96OjzN0CnI1o922WGFyavPn-BQHcakl7D_Duj9FSfjaNbpNTLWjxg0ucu99ON2es9rILC5YHHfGxfmUzDgSMffievre0eVrhCDfc1nPTSPuLWPCulUDJ86fob10"/>
+</div>
+<p class="text-4xl font-bold mt-2">88%</p>
+<p class="text-sm text-gray-600 mt-1">Model Accuracy (Sentiment Classification)</p>
+</div>
+<!-- Metric Card 2 -->
+<div class="p-4 rounded-lg border border-gray-200 shadow-sm bg-blue-50" data-purpose="metric-card">
+<div class="bg-metric-blue-icon p-2 rounded-md inline-block">
+<img alt="Satisfaction Icon" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUlhz2g7ncS6zsKOuRp4mPTJ4dfngThqrpYF2DukI4D_rkwPC18k0zCenHFpgWihtAyk-gMnczvG0xJyohf5Gk66jddBGPd29Z3yaC2Udbzzxvg7nU9KI4FbMLXREgtKmz_U5PVdvlNgvUHAzjqnzUl8kxwJToYGwv1IMti4ZNUzrHfV0ix52juTUr50YxtMsn8BSzf-zBytWfnMUfQKuYBSsjNgzp3fD_Bs9Bn7Vj-VvlYwIYeynM34rkhgznKOv_OHmpZnCInog"/>
+</div>
+<p class="text-4xl font-bold mt-2 flex items-center">+15% <span class="text-green-500 ml-2">↗</span></p>
+<p class="text-sm text-gray-600 mt-1">Increase in Customer Satisfaction (CSAT Score)</p>
+</div>
+<!-- Metric Card 3 -->
+<div class="p-4 rounded-lg border border-gray-200 shadow-sm bg-purple-50" data-purpose="metric-card">
+<div class="bg-metric-purple-icon p-2 rounded-md inline-block">
+<img alt="Sales Icon" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgNwvWO6Wo-4TUAz1_VExIb9TNvXXCT3hFkkCT5Ls3Z0fDwARn3iT7pmmK8HilnTI0bTEPwmZ5BVgYIC2zFcQLFWq5rpIXyUj3U40o7TG2laqLXbhkoAfE1BS4-KEpEWUdbyQ6K6z9TvvgnRd2SWnwHRlFiQd12IYywbQtdPJGKSnEOGl8D5uUtu5AbkLoebLeaGv4Mt3TFIO6JqLwJSDbYrQ2kOsFyE7fXyAFQyJ_MlsTg9mrwZ7SYZZyZse41G4iz5QrqELoxII"/>
+</div>
+<p class="text-4xl font-bold mt-2 flex items-center">+4.5% <span class="text-green-500 ml-2">↑</span></p>
+<p class="text-sm text-gray-600 mt-1">QoQ Sales Increase (Attributed to Product Enhancements)</p>
+</div>
+</div>
+</section>
+<!-- Analysis Workflow Diagram -->
+<section data-purpose="workflow-diagram">
+<h2 class="text-2xl font-bold mb-4">Analysis Workflow Diagram</h2>
+<div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+<img alt="Analysis Workflow Diagram" class="w-full h-auto rounded" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBzkO8J8pow3-6oAQIPEhLf9XzsE76GMqn4Z_23xzEWckCjQkAOJueCkXIA_i2D5kjBla4LsyjkbN3obdDD4UMhiMTwhOBL9EPnrLan3Q1Aw8oLA0wmbWX8JaKYnmJzqhttGP-Pc4QtAcWpWuqRXXzyiqo0XJeoOnNXd9Odax7bE71d3v5K4a_eOE327eDkda36c66Jov4joxYSL1MwbMxQ1ecLwTyTpTJkKXAVhvFKqy2WHLld9PnbP2dxGWF0Qr84nSAcjxlEKI"/>
+</div>
+</section>
+<!-- Technical Stack -->
+<section data-purpose="tech-stack">
+<h2 class="text-2xl font-bold mb-3">Technical Stack</h2>
+<p class="text-gray-600">
+              Python, XGBoost, scikit-learn, NLTK, Pandas, Tableau
+            </p>
+</section>
+<!-- Conclusion & Learnings -->
+<section data-purpose="conclusion-learnings">
+<h2 class="text-2xl font-bold mb-3">Conclusion &amp; Learnings</h2>
+<p class="text-gray-600 leading-relaxed">
+              This project successfully automated feedback analysis, providing the product team with data-driven insights. The model's high accuracy allowed for quick identification of pain points, leading to targeted improvements that significantly boosted customer satisfaction and sales performance.
+            </p>
+</section>
+</div>
+<!-- END: ProjectDetails -->
+</main>
+<!-- END: LeftColumn -->
+<!-- BEGIN: RightColumn -->
+<!-- END: RightColumn -->
+</div>
+<!-- END: PageContentGrid -->
+</div>
+<!-- BEGIN: MainFooter -->
+<footer class="bg-brand-dark-blue text-brand-text-light mt-8">
+<div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+<!-- Copyright text on the left -->
+<p class="text-sm">© 2024 Rajesh Hugar. All rights reserved.</p>
+<!-- Social media icons on the right -->
+<div class="flex items-center space-x-4" data-purpose="social-media-links">
+<a class="text-gray-400 hover:text-white transition-colors" href="#">
+<img alt="LinkedIn" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMbzoCCmSxyZ8LLxCGnVV7CVjap_7RfF7AArTAYI196-_KKNuIUngm77LdudShrRwJ6kbQlXTAObo_Kncw9Gj5YHZrPz199IwKjk7G64BdFg3NxQw8-sqsRTVFI4muA0shkjftYahZtYYedCo2gdheR_a3v_QB6GuJ_5nRyJEoOVz1sZLY-xLf9s7SP8FoMHZGTubeaKmgJqAW0Ga42972_efZvjC4DNH9ihMILusUV1dphL-qKlnzCUgpYMV7ZUATY6RzUOBKf20"/>
+</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#">
+<img alt="GitHub" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmxbxGYvhHxPF2tr0MonzCRKHaLiDNsTZKJsJfW60q-csmV2tfcGHaV_sgBDqCYR1NRbl-gUlJUwOgdppK23NWJEVY8m_mTjVJvSTyO-ocxIo0CVwoz4hJsmaEWkb8SB8OK7cBmOQ7QMFd155qgbXfaobA8IDxC-iQ-RyQlTJFBuiklXPN7M6xddY1LGIJtz_o3eX7ZniNS4aCyqQ3AF-V7yshLHh2wzhp3RK0P9mEOh7zgyQx9uHm8nOIY-96HBNanBOF9GQ5A5c"/>
+</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="#">
+<img alt="Twitter" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiGe6B6eRHJc123pm7_Pi_02urN8lm295kP-oOUTIo9RNCdYvMzQN2eLauI8Ibep9Jg0WjRmi3ntoedOMECFIrE8MKdLP-4G4odLEv03t9dfki-k0OibswfkFIro3g6TDNmXOYo7Wx8EbJPUb2CNhDQ-k4c_JEl0CXbjNz6B6xfKtd_tymsG993DkFFu_ZATFon_ehAYAcg3-eFkA_dzATuOiJBwyo6WAit_q2Pjsmp5igPLbPUsy7T2usY-HFaJQFp4rwKwlK2jY"/>
+</a>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+</body></html>
